@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #800000; /* Deep Maroon */
+  --secondary: #d4af37; /* Metallic Gold */
+  --accent: #ff9933; /* Saffron */
+  --bg-divine: #fffaf0; /* Floral White */
+  --text-main: #2d241e;
+  --glass: rgba(255, 255, 255, 0.7);
+  --border-gold: rgba(212, 175, 55, 0.3);
+}
+
+body {
+  background-color: var(--bg-divine);
+  color: var(--text-main);
+  font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, .font-divine {
+  font-family: 'Marcellus', serif;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-gold);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(128, 0, 0, 0.05);
+}
+
+.divine-card {
+  @apply bg-white rounded-2xl border border-orange-100 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden;
+  border-bottom: 4px solid var(--primary);
+}
+
+.divine-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Custom Buttons */
+.btn-primary {
+  @apply bg-[#800000] text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 shadow-md hover:bg-[#a00000] hover:shadow-lg active:scale-95 flex items-center justify-center gap-2;
+}
+
+.btn-secondary {
+  @apply bg-white text-[#800000] border-2 border-[#800000] px-6 py-2 rounded-full font-medium transition-all duration-300 hover:bg-[#fff5f5] active:scale-95;
+}
+
+.btn-gold {
+  @apply bg-[#d4af37] text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 shadow-md hover:bg-[#e5c158] hover:shadow-lg active:scale-95;
+}
+
+/* Inputs */
+.divine-input {
+  @apply w-full bg-white/50 border border-orange-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-[#800000] focus:border-transparent outline-none transition-all;
+}
+
+/* Gradient Backgrounds */
+.gradient-shyam {
+  background: linear-gradient(135deg, #800000 0%, #4b0000 100%);
+}
+
+.gradient-gold {
+  background: linear-gradient(135deg, #d4af37 0%, #f9e29c 100%);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Grid Patterns */
+.bg-pattern {
+  background-image: radial-gradient(#d4af37 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-divine);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Receipt Style */
+.receipt-paper {
+  background: #fff;
+  background-image: linear-gradient(#f9f9f9 1px, transparent 1px);
+  background-size: 100% 2rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.receipt-paper::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 8px;
+  background: repeating-linear-gradient(45deg, #800000, #800000 10px, #d4af37 10px, #d4af37 20px);
+}
